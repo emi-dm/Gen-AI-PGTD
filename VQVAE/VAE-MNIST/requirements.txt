@@ -1,0 +1,16 @@
+# Base requirements
+gdown
+holoviews[recommended]
+jupyterlab
+jupyter_bokeh
+jupyter
+matplotlib
+numpy
+torch
+torchinfo
+torchvision
+tqdm
+umap-learn
+
+# cardiac-mri-autoencoders
+h5py

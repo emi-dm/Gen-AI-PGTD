@@ -1,0 +1,6 @@
+Modelo a emplear: https://civitai.com/models/133005/juggernaut-xl?modelVersionId=198530
+
+LoRA: https://civitai.com/models/453731/style-of-vincent-van-gogh-sdxl-123
+
+
+Prompt chica: "Close-up portrait of a young woman posing like in a beauty commercial, soft lighting, clear skin, subtle makeup, expressive eyes, slight smile, modern and elegant look, high-resolution, studio background, photorealistic style" Neg: "blurry, low resolution, pixelated, overexposed, underexposed, distorted face, asymmetrical facial features, crossed eyes, unnatural skin texture, excessive makeup, exaggerated facial expressions, teeth showing awkwardly, messy hair, dirty skin, artifacts, watermark, poorly drawn hands, extra limbs, deformed ears, bad anatomy, unrealistic lighting, cluttered background, lens flare, exaggerated proportions, cartoonish style, low contrast"
