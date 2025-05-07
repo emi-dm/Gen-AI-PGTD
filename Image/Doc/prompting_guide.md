@@ -32,19 +32,17 @@ Ambos se procesan como condicionales independientes que afectan la latente de at
 
 #### 1.3. Parámetros Relevantes: CFG Scale (Classifier-Free Guidance)
 
-* CFG Scale (guidance scale): controla cuánto el modelo debe seguir el prompt.
+* **CFG Scale (guidance scale)**: controla cuánto el modelo debe seguir el prompt.
 
-* Valores bajos (~3–6): más creatividad y variación, pero menos fidelidad.
+* **Valores bajos (~3–6)**: más creatividad y variación, pero menos fidelidad.
 
-* Valores altos (~12–20): mayor adherencia al prompt, pero menos diversidad.
+* **Valores altos (~12–20)**: mayor adherencia al prompt, pero menos diversidad.
 
-* Recomendación: iniciar en 7.5–9 y ajustar según nivel de control deseado.
+* **Recomendación**: iniciar en 7.5–9 y ajustar según nivel de control deseado.
 
 ---
 
 ### 2. Anatomía Detallada del Prompt
-
-#### 2.1. Componentes del Prompt Positivo
 
 * **Tema principal**: `portrait of a woman`, `abandoned futuristic ruins`
 * **Atributos y estilo**: `realistic`, `dreamlike`, `cyberpunk`, `analog horror`
@@ -76,14 +74,46 @@ Puedes modular negativamente el estilo también:
 cartoon, cel shading, low contrast, flat colors
 ```
 
-#### 2.3. Uso de Pesos
+#### 2.3. Uso de Pesos: Énfasis Controlado en la Latente Semántica
 
-Muchos modelos permiten ajustar el peso semántico:
+Los modelos como Flux y Stable Diffusion permiten ajustar el grado de influencia de cada término dentro del prompt mediante una sintaxis de **ponderación explícita**, útil para refinar la prioridad semántica durante la atención.
 
-* `(cinematic lighting:1.4)` refuerza este elemento
-* `(ugly:1.5)` en el prompt negativo penaliza ese resultado
+##### Sintaxis y Notación Común
 
-Algunos entornos permiten notaciones alternativas: `[[term]]` o `((term))` para énfasis
+* Paréntesis simples `()` aumentan el énfasis:
+
+  * `(cinematic lighting)` es más fuerte que `cinematic lighting`
+* Doble paréntesis `((...))` aplican un énfasis aún mayor (algunos entornos los interpretan como multiplicadores implícitos, típicamente x1.1 o x1.2 por cada capa).
+* Notación explícita con peso decimal: `(term:1.4)`
+
+  * Valores >1 intensifican el término
+  * Valores <1 lo atenúan sin eliminarlo
+
+##### Ejemplos de uso:
+
+```text
+a portrait of a woman, (cinematic lighting:1.5), (soft focus:1.2), ((ethereal atmosphere))
+```
+
+En este prompt, *cinematic lighting* y *ethereal atmosphere* tendrán mayor peso en la generación que el resto de elementos.
+
+En prompts negativos, puedes aplicar la misma lógica para penalizar con más fuerza atributos indeseados:
+
+```text
+ugly, (deformed face:1.6), (text:1.4), ((bad anatomy))
+```
+
+##### Recomendaciones Estratégicas
+
+* Evita sobredimensionar múltiples términos (>1.6) simultáneamente: puede provocar saturación semántica y confundir la atención del modelo.
+* Usa pesos explícitos para dirigir diferencias sutiles (ej. cambiar solo la iluminación sin alterar la composición).
+* Puedes combinar pesos con templates programáticos para adaptar el énfasis según metas visuales o métricas de calidad.
+
+##### Consideraciones por Plataforma
+
+* AUTOMATIC1111, ComfyUI y otras UIs de difusión permiten estas notaciones, pero algunos entornos como Diffusers de HuggingFace requieren transformar el prompt en tokens ponderados mediante código.
+* Algunos modelos personalizados responden de forma no lineal a pesos extremos (>2.0), y pueden generar resultados impredecibles.
+
 
 #### 2.4. Ejemplos de Prompts por Nivel de Detalle
 

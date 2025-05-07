@@ -1,0 +1,5 @@
+- Hacer transparencias Difusión, ControlNet y LoRA
+- Crear notebook pipeline HF SD 1.5
+- Hacer workflow de ControlNet y LoRA (este último refinar)
+- Hacer transparencias Wan 2.1
+- Hacer transparencias de DiffRythim
