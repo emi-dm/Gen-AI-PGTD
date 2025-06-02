@@ -1,3 +1,0 @@
-- Hacer transparencias Difusión, ControlNet y LoRA
-- Hacer transparencias Wan 2.1
-- Hacer transparencias de DiffRythim
