@@ -1,5 +1,9 @@
 # 🚀 Gen-AI-PGTD
 
+<div align="center">
+  <img src="src/aigogh.jpg" alt="Portada: IA Gogh pintando La Noche Estrellada" style="max-width: 700px; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); margin-bottom: 1em;" />
+</div>
+
 ¡Bienvenido al repositorio de **Inteligencia Artificial Generativa** para el **Programa de Gestión y Transformación Digital (PGTD)**! 🤖✨
 
 ---
