@@ -38,15 +38,19 @@ Facilitar el aprendizaje y la experimentación con herramientas de IA generativa
 2. **Crea un entorno virtual con Python 3.11** usando [uv](https://github.com/astral-sh/uv):
    ```bash
    uv venv .venv --python 3.11
+   # En Linux/Mac
    source .venv/bin/activate
+   # En Windows
+   .venv\Scripts\activate
    ```
-3. **Instala las dependencias** desde el fichero `requirements.txt`:
+3. **Instala PyTorch** siguiendo las instrucciones de la web oficial ([https://pytorch.org/get-started/locally/](https://pytorch.org/get-started/locally/)), eligiendo tu sistema operativo y si tienes GPU o no.
+4. **Instala las dependencias** desde el fichero `requirements.txt`:
    ```bash
    uv pip install -r requirements.txt
    ```
-4. **Explora las carpetas** y revisa los materiales disponibles.
-5. **Lee las instrucciones** específicas en cada carpeta o archivo para ejecutar los ejemplos.
-6. Si tienes dudas o sugerencias, ¡abre un issue o contribuye con tus propias mejoras!
+5. **Explora las carpetas** y revisa los materiales disponibles.
+6. **Lee las instrucciones** específicas en cada carpeta o archivo para ejecutar los ejemplos.
+7. Si tienes dudas o sugerencias, ¡abre un issue o contribuye con tus propias mejoras!
 
 ---
 
@@ -64,8 +68,7 @@ Para cualquier consulta, puedes contactar con el equipo docente o dejar tus preg
 
 ## ⚠️ Nota importante sobre PyTorch
 
-- **Instalación de PyTorch (Windows y Linux):**
-  PyTorch **NO está incluido en el archivo `requirements.txt`** porque su instalación depende de tu sistema operativo y de si tienes o no GPU compatible. 
+- PyTorch **NO está incluido en el archivo `requirements.txt`** porque su instalación depende de tu sistema operativo y de si tienes o no GPU compatible. 
   
   Debes instalar PyTorch manualmente siguiendo las instrucciones de la web oficial ([https://pytorch.org/get-started/locally/](https://pytorch.org/get-started/locally/)). Selecciona tu sistema (Windows, Linux, Mac) y elige la opción adecuada para CPU o GPU. Por ejemplo, para Linux con CPU:
   ```bash
@@ -76,18 +79,6 @@ Para cualquier consulta, puedes contactar con el equipo docente o dejar tus preg
   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
   ```
   Si tienes GPU NVIDIA, selecciona la opción correspondiente en la web para aprovechar la aceleración.
-
-- **Después de instalar PyTorch**, puedes continuar instalando el resto de dependencias con:
-  ```bash
-  uv pip install -r requirements.txt
-  ```
-
-- **Activación del entorno virtual en Windows:**
-  Si estás en Windows, después de crear el entorno virtual, actívalo con:
-  ```cmd
-  .venv\Scripts\activate
-  ```
-  (Recuerda usar doble barra invertida o una sola si lo escribes directamente en la terminal de Windows.)
 
 ---
 
