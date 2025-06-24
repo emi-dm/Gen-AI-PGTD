@@ -62,6 +62,36 @@ Para cualquier consulta, puedes contactar con el equipo docente o dejar tus preg
 
 ---
 
+## ⚠️ Nota importante sobre PyTorch
+
+- **Instalación de PyTorch (Windows y Linux):**
+  PyTorch **NO está incluido en el archivo `requirements.txt`** porque su instalación depende de tu sistema operativo y de si tienes o no GPU compatible. 
+  
+  Debes instalar PyTorch manualmente siguiendo las instrucciones de la web oficial ([https://pytorch.org/get-started/locally/](https://pytorch.org/get-started/locally/)). Selecciona tu sistema (Windows, Linux, Mac) y elige la opción adecuada para CPU o GPU. Por ejemplo, para Linux con CPU:
+  ```bash
+  pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+  ```
+  Para Windows con CPU:
+  ```cmd
+  pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+  ```
+  Si tienes GPU NVIDIA, selecciona la opción correspondiente en la web para aprovechar la aceleración.
+
+- **Después de instalar PyTorch**, puedes continuar instalando el resto de dependencias con:
+  ```bash
+  uv pip install -r requirements.txt
+  ```
+
+- **Activación del entorno virtual en Windows:**
+  Si estás en Windows, después de crear el entorno virtual, actívalo con:
+  ```cmd
+  .venv\Scripts\activate
+  ```
+  (Recuerda usar doble barra invertida o una sola si lo escribes directamente en la terminal de Windows.)
+
+---
+
 ¡Esperamos que este repositorio te ayude a aprender, experimentar y divertirte con la IA generativa! 🚀🤩
 
 ---
+
